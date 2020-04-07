@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chart.js Web Component</title>
+</head>
+
+<body>
+  <button id='add-series'>Add Series</button>
+  <frmdb-chart options='{}' type='bar' height="400" width="600">
+    <frmdb-chart-series name='Series 1'>
+      <frmdb-chart-data-point x='Red' y=12 />
+      <frmdb-chart-data-point x='Blue' y=6 />
+      <frmdb-chart-data-point x='Green' y=16 />
+      <frmdb-chart-data-point x='White' y=2 />
+      <frmdb-chart-data-point x='Yellow' y=8 />
+    </frmdb-chart-series>
+  </frmdb-chart>
+
+  <script src="./bundle.js"></script>
+
+  <script>
+    document.querySelector('button#add-series').addEventListener('click', () => {
+      let series = document.createElement('frmdb-chart-series');
+      series.setAttribute('name', `Series ${Math.floor(Math.random() * 5000)}`);
+      ['Red', 'White', 'Yellow', 'Green', 'Blue'].map(c => {
+        let dp = document.createElement('frmdb-chart-data-point');
+        dp.setAttribute('x', c);
+        dp.setAttribute('y', Math.floor(Math.random() * 16));
+        return dp;
+      }).forEach(dp => series.appendChild(dp));
+      document.querySelector('frmdb-chart').appendChild(series);
+    });
+  </script>
+
+</body>
+
+</html>
