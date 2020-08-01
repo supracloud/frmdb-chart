@@ -72,10 +72,9 @@ export class FrmdbChart extends HTMLElement {
     }
 
     connectedCallback() {
-        this.shadowRoot.querySelector('slot')
-            .addEventListener('slotchange', (e) => {
-                this.redraw();
-            });
+        new MutationObserver(() => {
+            this.redraw();
+        }).observe(this, { childList: true, subtree: true });
     }
 
     static get observedAttributes() {

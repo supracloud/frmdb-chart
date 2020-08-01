@@ -3,7 +3,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'frmdb-chart.js'
   },
   devServer: {
     contentBase: './dist'
