@@ -7,13 +7,13 @@
 
 <body>
   <button id='add-series'>Add Series</button>
-  <frmdb-chart options='{}' type='bar' height="400" width="600">
+  <frmdb-chart options='{}' type='line' height="100" width="800">
     <frmdb-chart-series name='Series 1'>
-      <frmdb-chart-data-point x='Red' y=12 />
-      <frmdb-chart-data-point x='Blue' y=6 />
-      <frmdb-chart-data-point x='Green' y=16 />
-      <frmdb-chart-data-point x='White' y=2 />
-      <frmdb-chart-data-point x='Yellow' y=8 />
+      <frmdb-chart-p><frmdb-chart-p-x>Red</frmdb-chart-p-x><frmdb-chart-p-y>12</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Blue</frmdb-chart-p-x><frmdb-chart-p-y>6</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Green</frmdb-chart-p-x><frmdb-chart-p-y>16</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>White</frmdb-chart-p-x><frmdb-chart-p-y>2</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Yellow</frmdb-chart-p-x><frmdb-chart-p-y>8</frmdb-chart-p-y></frmdb-chart-p>
     </frmdb-chart-series>
   </frmdb-chart>
 
@@ -24,9 +24,8 @@
       let series = document.createElement('frmdb-chart-series');
       series.setAttribute('name', `Series ${Math.floor(Math.random() * 5000)}`);
       ['Red', 'White', 'Yellow', 'Green', 'Blue'].map(c => {
-        let dp = document.createElement('frmdb-chart-data-point');
-        dp.setAttribute('x', c);
-        dp.setAttribute('y', Math.floor(Math.random() * 16));
+        let dp = document.createElement('frmdb-chart-p');
+        dp.innerHTML = `<frmdb-chart-p-x>${c}</frmdb-chart-p-x><frmdb-chart-p-y>${Math.floor(Math.random() * 16)}</frmdb-chart-p-y>`;
         return dp;
       }).forEach(dp => series.appendChild(dp));
       document.querySelector('frmdb-chart').appendChild(series);

@@ -1,5 +1,5 @@
 {
-  "name": "wc-fullcalendar",
+  "name": "frmdb-chart",
   "version": "0.0.1",
   "description": "Web Component Wrapper over Fullcalendar",
   "main": "lib/bundle.js",

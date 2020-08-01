@@ -1,0 +1,33 @@
+#hide-series-data {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+#chart-data slot {
+    display: none;
+}
+#chart-data #hide-series-data {
+    opacity: 0.35;
+}
+#chart-data.visible slot {
+    display: flex;
+}
+#chart-data.visible #hide-series-data {
+    opacity: 1;
+}
+
+#chart-data .show {
+    display: initial;
+}
+#chart-data .hide {
+    display: none;
+}
+
+#chart-data.visible .show {
+    display: none;
+}
+#chart-data.visible .hide {
+    display: initial;
+}
