@@ -4,7 +4,7 @@ export class FrmdbChartSeries extends HTMLElement {
         super();
     }
     static get observedAttributes() {
-        return ['name', 'suffix'];
+        return ['name', 'suffix', 'suffix2', 'suffix3'];
     }
     connectedCallback() {
         this.style.display = 'table';
@@ -27,6 +27,19 @@ export class FrmdbChartSeries extends HTMLElement {
         this.setAttribute('suffix', val);
     }
 
+    get suffix2() {
+        return this.getAttribute('suffix2');
+    }
+    set suffix2(val) {
+        this.setAttribute('suffix2', val);
+    }
+    get suffix3() {
+        return this.getAttribute('suffix3');
+    }
+    set suffix3(val) {
+        this.setAttribute('suffix3', val);
+    }
+    
     attributeChangedCallback(name, oldVal, newVal) {
         this.dispatchEvent(new CustomEvent('change'));
     }

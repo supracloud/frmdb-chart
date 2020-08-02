@@ -67,7 +67,7 @@ export class FrmdbChart extends HTMLElement {
                         dataMap[x][`s${i}`] = dp.y;
                     });
                 let series = {
-                    label: s.name + (s.suffix ? ' ' + s.suffix : ''),
+                    label: s.name + (s.suffix ? ' ' + s.suffix : '') + (s.suffix2 ? ' ' + s.suffix2 : '') + (s.suffix3 ? ' ' + s.suffix3 : ''),
                     data: [],
                     _id: `s${i}`,
                     borderColor: LINE_COLORS[i % LINE_COLORS.length],
