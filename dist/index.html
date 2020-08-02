@@ -8,7 +8,7 @@
 <body>
   <button id='add-series'>Add Series</button>
   <frmdb-chart options='{}' type='line' height="100" width="800">
-    <frmdb-chart-series name='Series 1'>
+    <frmdb-chart-series name='Series 1' suffix="suf">
       <frmdb-chart-p><frmdb-chart-p-x>Red</frmdb-chart-p-x><frmdb-chart-p-y>12</frmdb-chart-p-y></frmdb-chart-p>
       <frmdb-chart-p><frmdb-chart-p-x>Blue</frmdb-chart-p-x><frmdb-chart-p-y>6</frmdb-chart-p-y></frmdb-chart-p>
       <frmdb-chart-p><frmdb-chart-p-x>Green</frmdb-chart-p-x><frmdb-chart-p-y>16</frmdb-chart-p-y></frmdb-chart-p>
@@ -17,7 +17,7 @@
     </frmdb-chart-series>
   </frmdb-chart>
 
-  <script src="./bundle.js"></script>
+  <script src="./frmdb-chart.js"></script>
 
   <script>
     document.querySelector('button#add-series').addEventListener('click', () => {

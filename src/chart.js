@@ -3,7 +3,15 @@ import chartStyle from './chart.css';
 //@ts-check
 import Chart from 'chart.js/dist/Chart.min';
 import { FrmdbChartDataPoint } from './point';
+import { FrmdbChartSeries } from './series';
 
+const LINE_COLORS = [
+    'red',
+    'blue',
+    'cyan',
+    'magenta',
+    'green'
+]
 export class FrmdbChart extends HTMLElement {
 
     constructor() {
@@ -47,16 +55,25 @@ export class FrmdbChart extends HTMLElement {
     redraw() {
         let data = { labels: [], datasets: [] };
         let dataMap = {};
-        this.querySelectorAll('frmdb-chart-series').forEach((s, i) => {
-            s.querySelectorAll('frmdb-chart-p')
-                .forEach((/** @type {FrmdbChartDataPoint}*/dp) => {
-                    let x = dp.x;
-                    if (!dataMap[x]) dataMap[x] = {};
-                    dataMap[x][`s${i}`] = dp.y;
-                });
-            let series = { label: s.getAttribute('name'), data: [], _id: `s${i}` };
-            data.datasets.push(series);
-        });
+        this.querySelectorAll('frmdb-chart-series').forEach(
+            /**
+             * @param {FrmdbChartSeries} s
+             */
+            (s, i) => {
+                s.querySelectorAll('frmdb-chart-p')
+                    .forEach((/** @type {FrmdbChartDataPoint}*/dp) => {
+                        let x = dp.x;
+                        if (!dataMap[x]) dataMap[x] = {};
+                        dataMap[x][`s${i}`] = dp.y;
+                    });
+                let series = {
+                    label: s.name + (s.suffix ? ' ' + s.suffix : ''),
+                    data: [],
+                    _id: `s${i}`,
+                    borderColor: LINE_COLORS[i % LINE_COLORS.length],
+                };
+                data.datasets.push(series);
+            });
         Object.keys(dataMap).forEach(k => {
             data.labels.push(k);
             Object.keys(dataMap[k]).forEach(s => {
