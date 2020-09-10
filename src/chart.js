@@ -71,6 +71,7 @@ export class FrmdbChart extends HTMLElement {
                     data: [],
                     _id: `s${i}`,
                     borderColor: LINE_COLORS[i % LINE_COLORS.length],
+                    ...(s.options || {})
                 };
                 data.datasets.push(series);
             });

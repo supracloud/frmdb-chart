@@ -7,14 +7,23 @@
 
 <body>
   <button id='add-series'>Add Series</button>
-  <frmdb-chart options='{}' type='line' height="100" width="800">
-    <frmdb-chart-series name='Series 1' suffix="suf">
-      <frmdb-chart-p><frmdb-chart-p-x>Red</frmdb-chart-p-x><frmdb-chart-p-y>12</frmdb-chart-p-y></frmdb-chart-p>
-      <frmdb-chart-p><frmdb-chart-p-x>Blue</frmdb-chart-p-x><frmdb-chart-p-y>6</frmdb-chart-p-y></frmdb-chart-p>
-      <frmdb-chart-p><frmdb-chart-p-x>Green</frmdb-chart-p-x><frmdb-chart-p-y>16</frmdb-chart-p-y></frmdb-chart-p>
-      <frmdb-chart-p><frmdb-chart-p-x>White</frmdb-chart-p-x><frmdb-chart-p-y>2</frmdb-chart-p-y></frmdb-chart-p>
-      <frmdb-chart-p><frmdb-chart-p-x>Yellow</frmdb-chart-p-x><frmdb-chart-p-y>8</frmdb-chart-p-y></frmdb-chart-p>
+  <frmdb-chart options='{ "scales": { "yAxes": [ { "id": "A", "position": "left", "type": "linear"}, { "id": "B", "position": "right", "type": "linear", "ticks": { "max": 2000} } ] } }'
+    type='line' height="250" width="800"
+  >
+    <frmdb-chart-series name='Series 1' options='{"yAxesID": "A"}' suffix="suf">
+      <frmdb-chart-p><frmdb-chart-p-x>Red</frmdb-chart-p-x><frmdb-chart-p-y>2512</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Blue</frmdb-chart-p-x><frmdb-chart-p-y>256</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Green</frmdb-chart-p-x><frmdb-chart-p-y>6616</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>White</frmdb-chart-p-x><frmdb-chart-p-y>662</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Yellow</frmdb-chart-p-x><frmdb-chart-p-y>998</frmdb-chart-p-y></frmdb-chart-p>
     </frmdb-chart-series>
+    <frmdb-chart-series name='Series 2' options='{"yAxesID": "B"}' suffix="suf">
+      <frmdb-chart-p><frmdb-chart-p-x>Red</frmdb-chart-p-x><frmdb-chart-p-y>1200</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Blue</frmdb-chart-p-x><frmdb-chart-p-y>600</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Green</frmdb-chart-p-x><frmdb-chart-p-y>1600</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>White</frmdb-chart-p-x><frmdb-chart-p-y>200</frmdb-chart-p-y></frmdb-chart-p>
+      <frmdb-chart-p><frmdb-chart-p-x>Yellow</frmdb-chart-p-x><frmdb-chart-p-y>800</frmdb-chart-p-y></frmdb-chart-p>
+    </frmdb-chart-series>    
   </frmdb-chart>
 
   <script src="./frmdb-chart.js"></script>

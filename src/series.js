@@ -44,5 +44,13 @@ export class FrmdbChartSeries extends HTMLElement {
         this.dispatchEvent(new CustomEvent('change'));
     }
 
+    get options() {
+        return JSON.parse(this.getAttribute('options'));
+    }
+
+    set options(value) {
+        this.setAttribute('options', JSON.stringify(value));
+    }
+
     render() { }
 }
