@@ -13,7 +13,7 @@
   "author": "Valentin Raduti <valentin@thedotin.ro> (https://deroude.ro); credits for bootstrap project to Robin Wieruch <opensource@rwieruch.com> (https://www.robinwieruch.de)",
   "license": "MIT",
   "dependencies": {
-    "chart.js": "2.9.3"
+    "chart.js": "2.9.4"
   },
   "devDependencies": {
     "webpack": "^4.32.2",
